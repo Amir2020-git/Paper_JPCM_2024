@@ -3,25 +3,16 @@ Replication data for: HDNNP for Co3O4
 
 AUTHORS:
 Amir Omranpour, Lehrstuhl für Theoretische Chemie II, Fakultät für Chemie und Biochemie, Ruhr-Universität Bochum
-
 Jörg Behler, Lehrstuhl für Theoretische Chemie II, Fakultät für Chemie und Biochemie, Ruhr-Universität Bochum
-
 
 CONTACT:
 Amir.Omranpour@ruhr-uni-bochum.de
 
-
-CITATION:
-Omranpour, Amir; Behler, Jörg, 2024, "Replication Data for: HDNNP for Co3O4", https://doi.org/10.17877/RESOLV-2024-m3rb0526, TUDOdata, V1"
-
-
 RELATED CITATION:
 A. Omranpour and J. Behler, “A High-Dimensional Neural Network Potential for Co3O4”, https://arxiv.org/abs/2409.11037, 2024. 
 
-
 PROJECT DESCRIPTION:
 The data files contain the raw input files for training the neural network, the required input files with the settings for the RuNNer code, and the resulting weights and scaling data used to perform the MD simulations reported in the paper.
-
 
 Date of creation: 27th November 2024 
 File format: txt 
