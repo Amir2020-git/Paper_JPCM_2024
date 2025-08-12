@@ -1,0 +1,217 @@
+### #############################################################
+### This is the input file for RuNNer 
+### #############################################################
+### General remarks: 
+### - commands can be switched off by using the # character at the BEGINNING of the line
+### - the input file can be structured by blank lines and comment lines
+### - the order of the keywords is arbitrary
+### - if keywords are missing, default values will be used and written to runner.out
+### - if mandatory keywords or keyword options are missing, RuNNer will stop with an error message 
+########################################################################################################################
+### general keywords
+########################################################################################################################
+runner_mode 2                             # 1=calculate symmetry functions, 2=fitting mode, 3=predicition mode
+
+nn_type_short 1                           # 1=Behler-Parrinello, 2=Pair NN
+
+number_of_elements 2                      # number of elements                                   
+elements Co O                             # specification of elements                            
+
+#remove_atom_energies                     # remove atomic energies before fitting                
+#atom_energy Co -0.58437                  # atomic reference energy (gas phase)
+#atom_energy O -0.27150                   # atomic reference energy (gas phase)
+
+random_seed 2000000000                    # seed for initial random weight parameters and train/test splitting
+test_fraction 0.10000                     # threshold for splitting between fitting and test set
+
+cutoff_type 1				  # 1=cos(x) function
+########################################################################################################################
+### symmetry function definitions (all modes): 
+########################################################################################################################
+#Radial symmetry functions
+#Keyword - Element1 - Type - Element2 - eta - R0 - Rc  
+symfunction_short Co  2 Co       0.000000      0.000000     12.0
+symfunction_short Co  2 Co       0.000500      0.000000     12.0
+symfunction_short Co  2 Co       0.005000      0.000000     12.0
+symfunction_short Co  2 Co       0.012000      0.000000     12.0
+symfunction_short Co  2 Co       0.024000      0.000000     12.0
+symfunction_short Co  2 Co       0.050000      0.000000     12.0
+symfunction_short Co  2 Co       0.100000      0.000000     12.0
+
+symfunction_short Co  2 O        0.000000      0.000000     12.0
+symfunction_short Co  2 O        0.000500      0.000000     12.0
+symfunction_short Co  2 O        0.007000      0.000000     12.0
+symfunction_short Co  2 O        0.019000      0.000000     12.0
+symfunction_short Co  2 O        0.051000      0.000000     12.0
+symfunction_short Co  2 O        0.100000      0.000000     12.0
+
+symfunction_short O   2 Co       0.000000      0.000000     12.0
+symfunction_short O   2 Co       0.000500      0.000000     12.0
+symfunction_short O   2 Co       0.007000      0.000000     12.0
+symfunction_short O   2 Co       0.019000      0.000000     12.0
+symfunction_short O   2 Co       0.051000      0.000000     12.0
+symfunction_short O   2 Co       0.100000      0.000000     12.0
+
+symfunction_short O   2 O        0.000000      0.000000     12.0
+symfunction_short O   2 O        0.000500      0.000000     12.0
+symfunction_short O   2 O        0.005000      0.000000     12.0
+symfunction_short O   2 O        0.012000      0.000000     12.0
+symfunction_short O   2 O        0.024000      0.000000     12.0
+symfunction_short O   2 O        0.050000      0.000000     12.0
+symfunction_short O   2 O        0.100000      0.000000     12.0
+
+# Angular symmetry functions
+# Keyword - Element1 - Type - Element2 - Element3 - eta - lambda - xi - Rc 
+symfunction_short Co 3 Co Co     0.000000      1.000000      1.000000     12.0
+symfunction_short Co 3 O  O      0.000000      1.000000      1.000000     12.0
+symfunction_short Co 3 Co O      0.000000      1.000000      1.000000     12.0
+symfunction_short O  3 Co Co     0.000000      1.000000      1.000000     12.0
+symfunction_short O  3 O  Co     0.000000      1.000000      1.000000     12.0
+symfunction_short O  3 O  O      0.000000      1.000000      1.000000     12.0
+
+symfunction_short Co 3 Co Co     0.000000      1.000000      2.000000     12.0
+symfunction_short Co 3 O  O      0.000000      1.000000      2.000000     12.0
+symfunction_short Co 3 Co O      0.000000      1.000000      2.000000     12.0
+symfunction_short O  3 Co Co     0.000000      1.000000      2.000000     12.0
+symfunction_short O  3 O  Co     0.000000      1.000000      2.000000     12.0
+symfunction_short O  3 O  O      0.000000      1.000000      2.000000     12.0
+
+symfunction_short Co 3 Co Co     0.000000      1.000000      4.000000     12.0
+symfunction_short Co 3 O  O      0.000000      1.000000      4.000000     12.0
+symfunction_short Co 3 Co O      0.000000      1.000000      4.000000     12.0
+symfunction_short O  3 Co Co     0.000000      1.000000      4.000000     12.0
+symfunction_short O  3 O  Co     0.000000      1.000000      4.000000     12.0
+symfunction_short O  3 O  O      0.000000      1.000000      4.000000     12.0
+
+symfunction_short Co 3 Co Co     0.000000      1.000000      16.000000    12.0
+symfunction_short Co 3 O  O      0.000000      1.000000      16.000000    12.0
+symfunction_short Co 3 Co O      0.000000      1.000000      16.000000    12.0
+symfunction_short O  3 Co Co     0.000000      1.000000      16.000000    12.0
+symfunction_short O  3 O  Co     0.000000      1.000000      16.000000    12.0
+symfunction_short O  3 O  O      0.000000      1.000000      16.000000    12.0
+
+symfunction_short Co 3 Co Co     0.000000      -1.000000      1.000000    12.0
+symfunction_short Co 3 O  O      0.000000      -1.000000      1.000000    12.0
+symfunction_short Co 3 Co O      0.000000      -1.000000      1.000000    12.0
+symfunction_short O  3 Co Co     0.000000      -1.000000      1.000000    12.0
+symfunction_short O  3 O  Co     0.000000      -1.000000      1.000000    12.0
+symfunction_short O  3 O  O      0.000000      -1.000000      1.000000    12.0
+
+symfunction_short Co 3 Co Co     0.000000      -1.000000      2.000000    12.0
+symfunction_short Co 3 O  O      0.000000      -1.000000      2.000000    12.0
+symfunction_short Co 3 Co O      0.000000      -1.000000      2.000000    12.0
+symfunction_short O  3 Co Co     0.000000      -1.000000      2.000000    12.0
+symfunction_short O  3 O  Co     0.000000      -1.000000      2.000000    12.0
+symfunction_short O  3 O  O      0.000000      -1.000000      2.000000    12.0
+
+symfunction_short Co 3 Co Co     0.000000      -1.000000      4.000000    12.0
+symfunction_short Co 3 O  O      0.000000      -1.000000      4.000000    12.0
+symfunction_short Co 3 Co O      0.000000      -1.000000      4.000000    12.0
+symfunction_short O  3 Co Co     0.000000      -1.000000      4.000000    12.0
+symfunction_short O  3 O  Co     0.000000      -1.000000      4.000000    12.0
+symfunction_short O  3 O  O      0.000000      -1.000000      4.000000    12.0
+
+symfunction_short Co 3 Co Co     0.000000      -1.000000      16.000000   12.0
+symfunction_short Co 3 O  O      0.000000      -1.000000      16.000000   12.0
+symfunction_short Co 3 Co O      0.000000      -1.000000      16.000000   12.0
+symfunction_short O  3 Co Co     0.000000      -1.000000      16.000000   12.0
+symfunction_short O  3 O  Co     0.000000      -1.000000      16.000000   12.0
+symfunction_short O  3 O  O      0.000000      -1.000000      16.000000   12.0
+
+symfunction_short Co 3 Co Co     0.025000      1.000000      1.000000     12.0
+symfunction_short Co 3 O  O      0.025000      1.000000      1.000000     12.0
+symfunction_short Co 3 Co O      0.025000      1.000000      1.000000     12.0
+symfunction_short O  3 Co Co     0.025000      1.000000      1.000000     12.0
+symfunction_short O  3 O  Co     0.025000      1.000000      1.000000     12.0
+symfunction_short O  3 O  O      0.025000      1.000000      1.000000     12.0
+
+symfunction_short Co 3 Co Co     0.025000      1.000000      2.000000     12.0
+symfunction_short Co 3 O  O      0.025000      1.000000      2.000000     12.0
+symfunction_short Co 3 Co O      0.025000      1.000000      2.000000     12.0
+symfunction_short O  3 Co Co     0.025000      1.000000      2.000000     12.0
+symfunction_short O  3 O  Co     0.025000      1.000000      2.000000     12.0
+symfunction_short O  3 O  O      0.025000      1.000000      2.000000     12.0
+
+symfunction_short Co 3 Co Co     0.025000      1.000000      4.000000     12.0
+symfunction_short Co 3 O  O      0.025000      1.000000      4.000000     12.0
+symfunction_short Co 3 Co O      0.025000      1.000000      4.000000     12.0
+symfunction_short O  3 Co Co     0.025000      1.000000      4.000000     12.0
+symfunction_short O  3 O  Co     0.025000      1.000000      4.000000     12.0
+symfunction_short O  3 O  O      0.025000      1.000000      4.000000     12.0
+
+symfunction_short Co 3 Co Co     0.025000      1.000000      16.000000    12.0
+symfunction_short Co 3 O  O      0.025000      1.000000      16.000000    12.0
+symfunction_short Co 3 Co O      0.025000      1.000000      16.000000    12.0
+symfunction_short O  3 Co Co     0.025000      1.000000      16.000000    12.0
+symfunction_short O  3 O  Co     0.025000      1.000000      16.000000    12.0
+symfunction_short O  3 O  O      0.025000      1.000000      16.000000    12.0
+
+symfunction_short Co 3 Co Co     0.025000      -1.000000      1.000000    12.0
+symfunction_short Co 3 O  O      0.025000      -1.000000      1.000000    12.0
+symfunction_short Co 3 Co O      0.025000      -1.000000      1.000000    12.0
+symfunction_short O  3 Co Co     0.025000      -1.000000      1.000000    12.0
+symfunction_short O  3 O  Co     0.025000      -1.000000      1.000000    12.0
+symfunction_short O  3 O  O      0.025000      -1.000000      1.000000    12.0
+
+symfunction_short Co 3 Co Co     0.025000      -1.000000      2.000000    12.0
+symfunction_short Co 3 O  O      0.025000      -1.000000      2.000000    12.0
+symfunction_short Co 3 Co O      0.025000      -1.000000      2.000000    12.0
+symfunction_short O  3 Co Co     0.025000      -1.000000      2.000000    12.0
+symfunction_short O  3 O  Co     0.025000      -1.000000      2.000000    12.0
+symfunction_short O  3 O  O      0.025000      -1.000000      2.000000    12.0
+
+symfunction_short Co 3 Co Co     0.025000      -1.000000      4.000000    12.0
+symfunction_short Co 3 O  O      0.025000      -1.000000      4.000000    12.0
+symfunction_short Co 3 Co O      0.025000      -1.000000      4.000000    12.0
+symfunction_short O  3 Co Co     0.025000      -1.000000      4.000000    12.0
+symfunction_short O  3 O  Co     0.025000      -1.000000      4.000000    12.0
+symfunction_short O  3 O  O      0.025000      -1.000000      4.000000    12.0
+
+symfunction_short Co 3 Co Co     0.025000      -1.000000      16.000000   12.0
+symfunction_short Co 3 O  O      0.025000      -1.000000      16.000000   12.0
+symfunction_short Co 3 Co O      0.025000      -1.000000      16.000000   12.0
+symfunction_short O  3 Co Co     0.025000      -1.000000      16.000000   12.0
+symfunction_short O  3 O  Co     0.025000      -1.000000      16.000000   12.0
+symfunction_short O  3 O  O      0.025000      -1.000000      16.000000   12.0
+########################################################################################################################
+### NN structure of the short-range NN  
+########################################################################################################################
+use_short_nn                              # use NN for short range interactions                    
+global_hidden_layers_short 3              # number of hidden layers                               
+global_nodes_short 25 20 15               # number of nodes in hidden layers                       
+global_activation_short t t t l           # activation functions                                   
+
+########################################################################################################################
+### fitting (mode 2):general inputs 
+########################################################################################################################
+epochs 30                                 # number of epochs                                       
+mix_all_points                            # schuffle points randomly
+scale_symmetry_functions                  # scale symmetry functions                               
+center_symmetry_functions                 # remove center of mass of symmetry function values     
+fitting_unit eV                           # unit for error output in mode 2 (eV or Ha)
+
+short_force_error_threshold 1.0           # threshold of adaptive Kalman filter short F            
+kalman_lambda_short 0.98000               # Kalman parameter short E/F                             
+kalman_nue_short 0.99870                  # Kalman parameter short E/F                             
+
+use_short_forces                          # use forces for fitting                                 
+short_force_fraction 0.1                  # percentage of forces used for fitting 100%=1.0         
+
+weights_min -1.0                          # minimum value for initial random short range weights
+weights_max 1.0                           # maximum value for initial random short range weights
+
+points_in_memory 1000                     # maximum number of structures in memory                     
+
+precondition_weights                      # precondition initial weights 
+nguyen_widrow_weights_short		  # initialize the short-range NN weights
+########################################################################################################################
+### output options for mode 2 (fitting):  
+########################################################################################################################
+write_weights_epoch 1                     # write set of weight parameters every ith epoch  
+write_trainpoints                         # write trainpoints.out and testpoints.out files        
+write_trainforces                         # write trainforces.out and testforces.out files        
+
+########################################################################################################################
+### output options for mode 3 (prediction):  
+########################################################################################################################
+calculate_forces                          # calculate forces 
